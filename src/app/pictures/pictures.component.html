@@ -1,1 +1,6 @@
 <p>Här ska bilder renderas</p>
+<div *ngIf="pictures.length > 0">
+    <div *ngFor="let picture of pictures">
+      <img [src]="picture.urls.small" [alt]="picture.alt_description">
+    </div>
+  </div>

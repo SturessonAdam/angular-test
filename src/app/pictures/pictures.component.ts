@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { PicturesService } from '../pictures.service';
 
 @Component({
   selector: 'app-pictures',
   standalone: true,
-  imports: [],
+  imports: [NgModule],
   templateUrl: './pictures.component.html',
   styleUrl: './pictures.component.css'
 })
