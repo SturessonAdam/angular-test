@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { PicturesService } from '../pictures.service';
+import { Component, Inject } from '@angular/core';
+import { PicturesService } from '../services/pictures.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class PicturesComponent {
   pictures: any[] = [];
 
-  constructor(private picturesService: PicturesService) { 
+  constructor(@Inject(PicturesService) private picturesService: PicturesService) { 
 
   }
 
