@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PicturesService {
-  private apiUrl = 'https://picsum.photos/200/300';
+  private apiUrl = 'https://picsum.photos/v2/list?limit=10';
 
   constructor(private http: HttpClient) { }
 

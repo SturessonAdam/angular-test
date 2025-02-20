@@ -1,25 +1,24 @@
-import { Component, Inject } from '@angular/core';
-import { PicturesService } from '../services/pictures.service';
+import { Component, OnInit, Inject } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { PicturesService } from '../services/pictures.service';
 
 @Component({
   selector: 'app-pictures',
   standalone: true,
-  imports: [CommonModule],
+  imports: [HttpClientModule, CommonModule],
   templateUrl: './pictures.component.html',
-  styleUrl: './pictures.component.css'
+  styleUrls: ['./pictures.component.css'],
+  providers: [PicturesService]
 })
-export class PicturesComponent {
+export class PicturesComponent implements OnInit {
   pictures: any[] = [];
 
-  constructor(@Inject(PicturesService) private picturesService: PicturesService) { 
+  constructor(@Inject(PicturesService) private picturesService: PicturesService) { }
 
-  }
-
-  ngOnInit() {
+  ngOnInit(): void {
     this.picturesService.getRandomPictures().subscribe((data: any[]) => {
       this.pictures = data;
     });
   }
-
 }
