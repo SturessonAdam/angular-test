@@ -11,7 +11,6 @@ export class PicturesService {
   constructor(private http: HttpClient) { }
 
   getRandomPictures(): Observable<any> {
-    const randomParam = `&random=${Math.random()}`;
-    return this.http.get<any>(this.apiUrl + randomParam);
+    return this.http.get<any>(this.apiUrl);
   }
 }
